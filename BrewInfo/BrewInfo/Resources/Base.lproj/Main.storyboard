@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ytE-vm-IZx">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Wew-uU-Edz">
+            <objects>
+                <navigationController id="ytE-vm-IZx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FBN-uV-CIx">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SwH-ZX-yiY" kind="relationship" relationship="rootViewController" id="vJ2-XB-f4e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0C-uF-Rwz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-953" y="387"/>
+        </scene>
+        <!--BrewList-->
+        <scene sceneID="mEx-DB-Ujg">
+            <objects>
+                <viewController storyboardIdentifier="brewListViewController" id="SwH-ZX-yiY" customClass="BrewListViewController" customModule="BrewInfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4c9-sm-bec">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="sxh-PN-SAi">
+                                <rect key="frame" x="33" y="98" width="344" height="713"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="brewTableViewCellIdentifier" rowHeight="140" id="de0-BJ-fCY" customClass="BrewTableViewCell" customModule="BrewInfo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="344" height="140"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="de0-BJ-fCY" id="QGi-VY-kol">
+                                            <rect key="frame" x="0.0" y="0.0" width="344" height="140"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1Q-In-zFH">
+                                                    <rect key="frame" x="0.0" y="0.0" width="344" height="140"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLW-ca-Xvp">
+                                                            <rect key="frame" x="16" y="16" width="312" height="108"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="DLW-ca-Xvp" firstAttribute="centerX" secondItem="C1Q-In-zFH" secondAttribute="centerX" id="1E9-Cq-32e"/>
+                                                        <constraint firstAttribute="bottom" secondItem="DLW-ca-Xvp" secondAttribute="bottom" constant="16" id="QiF-zs-gDW"/>
+                                                        <constraint firstItem="DLW-ca-Xvp" firstAttribute="leading" secondItem="C1Q-In-zFH" secondAttribute="leading" constant="16" id="VIC-Dh-unL"/>
+                                                        <constraint firstItem="DLW-ca-Xvp" firstAttribute="centerY" secondItem="C1Q-In-zFH" secondAttribute="centerY" id="YDc-p5-nwe"/>
+                                                        <constraint firstItem="DLW-ca-Xvp" firstAttribute="top" secondItem="C1Q-In-zFH" secondAttribute="top" constant="16" id="bhu-wh-QQp"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="C1Q-In-zFH" secondAttribute="bottom" id="1Y0-QP-4Ki"/>
+                                                <constraint firstItem="C1Q-In-zFH" firstAttribute="leading" secondItem="QGi-VY-kol" secondAttribute="leading" id="Bf4-JX-aQk"/>
+                                                <constraint firstAttribute="trailing" secondItem="C1Q-In-zFH" secondAttribute="trailing" id="QDo-bt-azh"/>
+                                                <constraint firstItem="C1Q-In-zFH" firstAttribute="top" secondItem="QGi-VY-kol" secondAttribute="top" id="Zgv-jx-ijr"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblTitle" destination="DLW-ca-Xvp" id="J5C-Kv-xxt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SwH-ZX-yiY" id="T6o-Yj-odM"/>
+                                    <outlet property="delegate" destination="SwH-ZX-yiY" id="yal-ud-4pd"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eOI-UN-y04"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BrewList" largeTitleDisplayMode="always" id="0Sa-FM-hMf" userLabel="BrewList"/>
+                    <connections>
+                        <outlet property="tableView" destination="sxh-PN-SAi" id="nsC-7y-nyO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fp0-rx-2SL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-245" y="492"/>
+        </scene>
+        <!--BrewDetail-->
+        <scene sceneID="5C4-Ks-s86">
+            <objects>
+                <viewController storyboardIdentifier="brewDetailViewController" id="nI5-Rf-U8V" customClass="BrewDetailViewController" customModule="BrewInfo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M0Z-Sm-FVa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-5U-yNn">
+                                <rect key="frame" x="16" y="438.66666666666669" width="361" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UMG-nC-Pgg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3Oz-5U-yNn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UMG-nC-Pgg" secondAttribute="top" constant="100" id="24U-wa-Sk1"/>
+                            <constraint firstItem="3Oz-5U-yNn" firstAttribute="centerY" secondItem="UMG-nC-Pgg" secondAttribute="centerY" id="Jxr-Tu-Jjz"/>
+                            <constraint firstItem="3Oz-5U-yNn" firstAttribute="leading" secondItem="UMG-nC-Pgg" secondAttribute="leading" constant="16" id="VEk-x5-hkA"/>
+                            <constraint firstItem="UMG-nC-Pgg" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="3Oz-5U-yNn" secondAttribute="bottom" constant="100" id="Ybx-sd-5UD"/>
+                            <constraint firstItem="3Oz-5U-yNn" firstAttribute="centerX" secondItem="UMG-nC-Pgg" secondAttribute="centerX" id="wc9-ag-rXw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="BrewDetail" largeTitleDisplayMode="always" id="6jN-Up-E1u" userLabel="BrewDetail"/>
+                    <connections>
+                        <outlet property="descriptionLbl" destination="3Oz-5U-yNn" id="Hjt-ih-rVH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HH0-n4-S7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="427" y="520"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
