@@ -8,7 +8,7 @@
 import XCTest
 @testable import BrewInfo
 
-class NetworkClientTests: XCTestCase {
+final class NetworkClientTests: XCTestCase {
 
     var networkManger: INetworkManager!
     let testUrl = URL(string: "TestURL")!

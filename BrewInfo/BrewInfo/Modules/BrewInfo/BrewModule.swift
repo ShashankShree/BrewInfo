@@ -8,24 +8,29 @@
 import Foundation
 import UIKit
 
-class BrewModule {
+typealias IdentifierName = String
+
+final class BrewModule {
     
     private let networkManager: INetworkManager
-    
+    private let brewList: IdentifierName = "brewListViewController"
+
     init(networkManager: INetworkManager) {
         self.networkManager = networkManager
     }
     
     func generateViewController() -> UIViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "brewListViewController") as? BrewListViewController  else {
+        let storyboard = UIStoryboard(name: BrewModuleConstant.mainStoryboard, bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: brewList) as? BrewListViewController  else {
             fatalError()
         }
         viewController.viewModel = generateBrewViewModel()
         viewController.viewModel?.outputDelegate = viewController
         return viewController
     }
-    
+}
+
+private extension BrewModule {
     private func generateBrewViewModel() -> IBrewInfoViewModel {
         let viewModel = BrewInfoViewModelImpl(useCase: generateBrewUseCase())
         return viewModel
@@ -47,11 +52,12 @@ class BrewModule {
     }
 }
 
-class BrewDetailModule {
-    
+final class BrewDetailModule {
+    private let brewDetail: IdentifierName = "brewDetailViewController"
+
     func generateDetailViewController(brewItem: BrewItem) -> UIViewController? {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "brewDetailViewController") as? BrewDetailViewController  else {
+        let storyboard = UIStoryboard(name: BrewModuleConstant.mainStoryboard, bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: brewDetail) as? BrewDetailViewController  else {
             fatalError()
         }
         viewController.viewModel = BrewInfoDetailViewModelImpl(item: brewItem)

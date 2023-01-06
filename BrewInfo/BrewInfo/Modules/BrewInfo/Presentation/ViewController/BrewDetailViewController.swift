@@ -7,9 +7,10 @@
 
 import UIKit
 
-class BrewDetailViewController: UIViewController {
+final class BrewDetailViewController: UIViewController {
     @IBOutlet private weak var descriptionLbl: UILabel!
-    
+    @IBOutlet private weak var logoImg: CustomImageView!
+
     // MARK: Variables
     
     var viewModel: IBrewInfoDetailViewModel?
@@ -18,6 +19,7 @@ class BrewDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        descriptionLbl.text = viewModel?.fetchBrewInfoforItem().description
+        descriptionLbl.text = viewModel?.fetchBrewInfoforItem()?.description
+        logoImg.downloadImageFrom(urlString: viewModel?.fetchBrewInfoforItem()?.imageUrl ?? "", imageMode: .scaleAspectFit)
     }
 }

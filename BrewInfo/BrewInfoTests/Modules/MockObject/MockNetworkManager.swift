@@ -8,7 +8,7 @@
 import Foundation
 @testable import BrewInfo
 
-class MockNetworkManager: INetworkManager {
+final class MockNetworkManager: INetworkManager {
     
     var brewList: [BrewDataListDTO]?
     var error: Error?

@@ -7,15 +7,19 @@
 
 import UIKit
 
-class BrewTableViewCell: UITableViewCell {
+final class BrewTableViewCell: UITableViewCell {
         
     @IBOutlet private weak var lblTitle: UILabel!
-        
+    @IBOutlet private weak var lblTagLine: UILabel!
+    @IBOutlet private weak var imgLogo: CustomImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     func configure(viewModel: BrewInfoCellViewModel) {
         lblTitle.text = viewModel.title
+        lblTagLine.text = viewModel.tagLine
+        imgLogo.downloadImageFrom(urlString: viewModel.imgLogo, imageMode: .scaleAspectFit)
     }
 }

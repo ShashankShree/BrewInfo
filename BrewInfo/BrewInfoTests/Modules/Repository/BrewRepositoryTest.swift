@@ -8,7 +8,7 @@
 import XCTest
 @testable import BrewInfo
 
-class BrewRepositoryTest: XCTestCase {
+final class BrewRepositoryTest: XCTestCase {
 
     var brewRepository: IBrewRepository!
     var mockBrewService: MockBrewService!

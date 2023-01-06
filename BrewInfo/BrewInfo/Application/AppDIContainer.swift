@@ -7,15 +7,10 @@
 
 import UIKit
 
-class AppDIContainer {
-    
-    var networkManager: INetworkManager = {
-        let networkManager = NetworkManager()
-        return networkManager
-    }()
+final class AppDIContainer {
     
     func load(on window: UIWindow?) {
-        let module = BrewModule(networkManager: networkManager)
+        let module = BrewModule(networkManager: NetworkManager.initObject)
         if let viewController = module.generateViewController() {
             let navigationController = UINavigationController(rootViewController: viewController)
             window?.rootViewController = navigationController

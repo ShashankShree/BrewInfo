@@ -7,12 +7,13 @@
 
 import UIKit
 
-class BrewListViewController: UIViewController {
+final class BrewListViewController: UIViewController {
     
     // MARK: IBOutlets
 
     @IBOutlet private weak var tableView: UITableView!
-    
+    private let brewTableViewCell: IdentifierName = "brewTableViewCellIdentifier"
+
     // MARK: Variables
     
     var viewModel: IBrewInfoViewModel?
@@ -20,12 +21,9 @@ class BrewListViewController: UIViewController {
     // MARK: Object Lifecycle
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        tableView.accessibilityIdentifier = BrewModuleConstant.brewListAccessbiliy
         viewModel?.fetchBrewInfo()
-    }
-    
-    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-        self.performSegue(withIdentifier: "brewDetailViewController", sender: self)
     }
 }
 
@@ -36,7 +34,7 @@ extension BrewListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "brewTableViewCellIdentifier", for: indexPath) as? BrewTableViewCell, let brewInfo = viewModel?.brewInfo else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: brewTableViewCell, for: indexPath) as? BrewTableViewCell, let brewInfo = viewModel?.brewInfo else {
             fatalError()
         }
 
@@ -53,8 +51,8 @@ extension BrewListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = viewModel?.getBrewItemforID(id: indexPath.row), let module = BrewDetailModule().generateDetailViewController(brewItem: item) else {return}
-        self.navigationController?.pushViewController(module, animated: false)
+        guard let item = viewModel?.getBrewItemforID(id: indexPath.row) else {return}
+        BrewModuleRouter().goToDetailViewController(brewItem: item, view: self)
     }
 }
 
@@ -69,8 +67,8 @@ extension BrewListViewController: BrewInfoViewModelOutput {
     
     func handleFailure(_ message: String) {
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: NSLocalizedString("alert", comment: ""), message: message, preferredStyle: .alert)
-            alert.addAction( UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel, handler: nil))
+            let alert = UIAlertController(title: NSLocalizedString(BrewModuleConstant.alertTitle, comment: ""), message: message, preferredStyle: .alert)
+            alert.addAction( UIAlertAction(title: NSLocalizedString(BrewModuleConstant.okTitle, comment: ""), style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }

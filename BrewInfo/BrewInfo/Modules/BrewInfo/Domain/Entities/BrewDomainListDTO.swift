@@ -11,7 +11,6 @@ struct BrewDomainListDTO: Equatable {
     let name: String
     let tagLine: String
     let description: String
-    let id: Int
     let imageUrl: String
 }
 
@@ -22,7 +21,6 @@ extension BrewDomainListDTO {
             name: name,
             tagLine: tagLine,
             description: description,
-            id: id,
             imageUrl: imageUrl)
     }
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882F2D412967C32200DCB51F /* BrewModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882F2D402967C32200DCB51F /* BrewModuleRouter.swift */; };
+		882F2D432967C7AA00DCB51F /* BrewModuleConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882F2D422967C7AA00DCB51F /* BrewModuleConstant.swift */; };
+		882F2D45296836FD00DCB51F /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882F2D44296836FD00DCB51F /* CustomImageView.swift */; };
 		88B859742952416B00DBAC0B /* BrewInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B859732952416B00DBAC0B /* BrewInfoUITests.swift */; };
 		88B859762952416B00DBAC0B /* BrewInfoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B859752952416B00DBAC0B /* BrewInfoUITestsLaunchTests.swift */; };
 		88B859A529524F6700DBAC0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88B8599C29524F6700DBAC0B /* Assets.xcassets */; };
@@ -69,6 +72,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		882F2D402967C32200DCB51F /* BrewModuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewModuleRouter.swift; sourceTree = "<group>"; };
+		882F2D422967C7AA00DCB51F /* BrewModuleConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewModuleConstant.swift; sourceTree = "<group>"; };
+		882F2D44296836FD00DCB51F /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		88B8594F2952416900DBAC0B /* BrewInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrewInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B859602952416B00DBAC0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88B859652952416B00DBAC0B /* BrewInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrewInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +298,9 @@
 				88B8599629524F6700DBAC0B /* Presentation */,
 				88B8599329524F6700DBAC0B /* Domain */,
 				88B8598F29524F6700DBAC0B /* Data */,
+				882F2D402967C32200DCB51F /* BrewModuleRouter.swift */,
+				882F2D422967C7AA00DCB51F /* BrewModuleConstant.swift */,
+				882F2D44296836FD00DCB51F /* CustomImageView.swift */,
 			);
 			path = BrewInfo;
 			sourceTree = "<group>";
@@ -558,12 +567,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				882F2D412967C32200DCB51F /* BrewModuleRouter.swift in Sources */,
+				882F2D45296836FD00DCB51F /* CustomImageView.swift in Sources */,
 				88B859D92952583500DBAC0B /* BrewRepositoryImpl.swift in Sources */,
 				88B859C3295256A900DBAC0B /* IBrewUseCase.swift in Sources */,
 				88B859D42952580E00DBAC0B /* IBrewInfoDetailViewModel.swift in Sources */,
 				88B859BF2952562800DBAC0B /* BrewTableViewCell.swift in Sources */,
 				88B859B7295255A800DBAC0B /* BrewInfoViewModelImpl.swift in Sources */,
 				88B859CD2952575900DBAC0B /* IBrewService.swift in Sources */,
+				882F2D432967C7AA00DCB51F /* BrewModuleConstant.swift in Sources */,
 				88B859DD295258A400DBAC0B /* Configuration.swift in Sources */,
 				88B859AC2952527900DBAC0B /* NetworkManager.swift in Sources */,
 				88B859F7295344C900DBAC0B /* BrewItem.swift in Sources */,

@@ -12,7 +12,7 @@ import Foundation
 protocol IBrewInfoViewModel {
     var brewInfo: [BrewInfoCellViewModel] { get set }
     func fetchBrewInfo()
-    func getBrewItemforID(id: Int)-> BrewItem
+    func getBrewItemforID(id: Int)-> BrewItem?
     var outputDelegate: BrewInfoViewModelOutput? { get set }
 }
 

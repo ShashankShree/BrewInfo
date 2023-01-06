@@ -8,7 +8,7 @@
 import XCTest
 @testable import BrewInfo
 
-class BrewDetailViewModelTest: XCTestCase {
+final class BrewDetailViewModelTest: XCTestCase {
 
     var viewModel: IBrewInfoDetailViewModel!
     

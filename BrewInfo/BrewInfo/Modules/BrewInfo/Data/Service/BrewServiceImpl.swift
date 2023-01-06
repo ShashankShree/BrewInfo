@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BrewServiceImpl: IBrewService {
+final class BrewServiceImpl: IBrewService {
         
     private let networkManager: INetworkManager
     

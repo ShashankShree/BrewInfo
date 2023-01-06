@@ -11,5 +11,5 @@ import Foundation
 
 protocol IBrewInfoDetailViewModel {
     init(item: BrewItem)
-    func fetchBrewInfoforItem()-> BrewItem
+    func fetchBrewInfoforItem()-> BrewItem?
 }

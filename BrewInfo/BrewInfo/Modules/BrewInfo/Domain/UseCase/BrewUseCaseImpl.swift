@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BrewUseCaseImpl: IBrewUseCase {
+final class BrewUseCaseImpl: IBrewUseCase {
         
     private let respository: IBrewRepository
     

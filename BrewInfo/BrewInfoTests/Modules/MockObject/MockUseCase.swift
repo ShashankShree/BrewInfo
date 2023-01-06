@@ -8,7 +8,7 @@
 import Foundation
 @testable import BrewInfo
 
-class MockBrewUseCase: IBrewUseCase {
+final class MockBrewUseCase: IBrewUseCase {
     
     var brewList: [BrewItem]?
     var error: Error?

@@ -8,7 +8,7 @@
 import XCTest
 @testable import BrewInfo
 
-class BrewViewModelTest: XCTestCase {
+final class BrewViewModelTest: XCTestCase {
 
     var viewModel: IBrewInfoViewModel!
     var mockBrewUseCase: MockBrewUseCase!
@@ -48,7 +48,7 @@ class BrewViewModelTest: XCTestCase {
     }
 }
 
-class MockBrewViewModelOutput: BrewInfoViewModelOutput  {
+final class MockBrewViewModelOutput: BrewInfoViewModelOutput  {
 
     var methodsCalled = [String]()
 

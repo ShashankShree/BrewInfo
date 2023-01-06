@@ -8,7 +8,7 @@
 import Foundation
 @testable import BrewInfo
 
-class MockData {
+final class MockData {
     
     static var brews: [BrewDataListDTO] {
         try! JSONDecoder().decode([BrewDataListDTO].self, from: brewInfoData)

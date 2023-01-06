@@ -11,6 +11,5 @@ struct BrewItem: Equatable {
     let name: String
     let tagLine: String
     let description: String
-    let id: Int
     let imageUrl: String
 }

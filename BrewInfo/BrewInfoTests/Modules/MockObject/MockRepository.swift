@@ -8,7 +8,7 @@
 import Foundation
 @testable import BrewInfo
 
-class MockBrewRepository: IBrewRepository {
+final class MockBrewRepository: IBrewRepository {
     
     var brewList: [BrewDomainListDTO]?
     var error: Error?

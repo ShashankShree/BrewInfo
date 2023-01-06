@@ -7,11 +7,11 @@
 
 import Foundation
 
-class BrewInfoDetailViewModelImpl: IBrewInfoDetailViewModel {
+final class BrewInfoDetailViewModelImpl: IBrewInfoDetailViewModel {
     
     // MARK: Private Variables
 
-    private var brewItem: BrewItem!
+    private var brewItem: BrewItem?
     
     // MARK: Object Lifecycle
     
@@ -21,7 +21,7 @@ class BrewInfoDetailViewModelImpl: IBrewInfoDetailViewModel {
     
     // MARK: Protocol Functions
     
-    func fetchBrewInfoforItem() -> BrewItem {
-        return brewItem
+    func fetchBrewInfoforItem() -> BrewItem? {
+        return brewItem ?? nil
     }
 }

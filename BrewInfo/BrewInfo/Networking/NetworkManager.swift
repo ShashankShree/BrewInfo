@@ -13,9 +13,14 @@ protocol INetworkManager {
     func request<T: Decodable>(fromUrl url: URL, completion: @escaping Response<T>)
 }
 
-class NetworkManager: INetworkManager {
+final class NetworkManager: INetworkManager {
     
     private let session: URLSession
+    
+    static let initObject: INetworkManager = {
+        let networkManager = NetworkManager()
+        return networkManager
+    }()
     
     init(session: URLSession = .shared) {
         self.session = session

@@ -11,7 +11,6 @@ struct BrewDataListDTO: Decodable {
     let name: String
     let tagLine: String
     let description: String
-    let id: Int
     let imageUrl: String
     let firstBrewed: String
     
@@ -19,7 +18,6 @@ struct BrewDataListDTO: Decodable {
         case name
         case tagLine = "tagline"
         case description
-        case id
         case imageUrl = "image_url"
         case firstBrewed = "first_brewed"
     }
@@ -32,7 +30,6 @@ extension BrewDataListDTO {
             name: name,
             tagLine: tagLine,
             description: description,
-            id: id,
             imageUrl: imageUrl)
     }
 }

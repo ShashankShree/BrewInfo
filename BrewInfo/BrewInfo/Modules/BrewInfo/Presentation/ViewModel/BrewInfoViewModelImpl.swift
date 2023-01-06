@@ -7,14 +7,14 @@
 
 import Foundation
 
-class BrewInfoViewModelImpl: IBrewInfoViewModel {
+final class BrewInfoViewModelImpl: IBrewInfoViewModel {
     
     // MARK: Variables
     weak var outputDelegate: BrewInfoViewModelOutput?
     var brewInfo: [BrewInfoCellViewModel] = [BrewInfoCellViewModel]()
     
     // MARK: Private Variables
-    private var brewList: [BrewItem]!
+    private var brewList: [BrewItem]?
     private let useCase: IBrewUseCase
     
     // MARK: Object Lifecycle
@@ -36,8 +36,8 @@ class BrewInfoViewModelImpl: IBrewInfoViewModel {
         }
     }
     
-    func getBrewItemforID(id: Int)-> BrewItem {
-        return self.brewList[id]
+    func getBrewItemforID(id: Int)-> BrewItem? {
+        return self.brewList?[id] ?? nil
     }
     
     // MARK: Methods
@@ -45,7 +45,7 @@ class BrewInfoViewModelImpl: IBrewInfoViewModel {
     private func processFetchedBrewList(_ brewList: [BrewItem]) -> [BrewInfoCellViewModel] {
         var brewInfoCellViewModel = [BrewInfoCellViewModel]()
         for brew in brewList {
-            let cellViewModel = BrewInfoCellViewModel(brew.tagLine)
+            let cellViewModel = BrewInfoCellViewModel(brew.name, brew.tagLine, brew.imageUrl)
             brewInfoCellViewModel.append(cellViewModel)
         }
         return brewInfoCellViewModel

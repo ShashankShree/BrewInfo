@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BrewRepositoryImpl: IBrewRepository {
+final class BrewRepositoryImpl: IBrewRepository {
     
     private let service: IBrewService
     

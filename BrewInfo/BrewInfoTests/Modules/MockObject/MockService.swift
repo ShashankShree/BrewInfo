@@ -8,7 +8,7 @@
 import Foundation
 @testable import BrewInfo
 
-class MockBrewService: IBrewService {
+final class MockBrewService: IBrewService {
     
     var response: [BrewDataListDTO]?
     var error: Error?

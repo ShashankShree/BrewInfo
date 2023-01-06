@@ -8,7 +8,7 @@
 import XCTest
 @testable import BrewInfo
 
-class BrewServiceTest: XCTestCase {
+final class BrewServiceTest: XCTestCase {
 
     var brewService: IBrewService!
     var mockNetworkManager: MockNetworkManager!
